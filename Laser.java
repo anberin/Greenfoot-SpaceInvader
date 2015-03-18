@@ -1,19 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Mothership here.
+ * Write a description of class Laser here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mothership extends Actor
+public class Laser extends Actor
 {
-    public Mothership(){
-        getImage().scale(60,26);
+    public Laser(){
+        getImage().scale(30,30);
     }
     public void act() 
     {
-        // Add your action code here.
-       
+        setLocation(getX(),getY()-3);
     }    
 }
