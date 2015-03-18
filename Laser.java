@@ -19,6 +19,7 @@ public class Laser extends Actor
         }
         else {
             getWorld().removeObject(aGrunt);
+            
         }
         
     }    
