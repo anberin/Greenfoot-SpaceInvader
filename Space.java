@@ -17,7 +17,12 @@ public class Space extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        addObject(new Grunt(), 200,100);
+        
+        
+        Grunt grunt1 = new grunt1();
+        addObject(grunt1, 200,100);
+        
+        
         addObject(new Mothership(),300, 100);
         addObject(new Cannon(), 500,500);
     }

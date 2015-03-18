@@ -14,5 +14,12 @@ public class Laser extends Actor
     public void act() 
     {
         setLocation(getX(),getY()-4);
+        Grunt aGrunt = (Grunt)getOneIntersectingObject(Grunt.class );         
+        if ( aGrunt == null ) {
+        }
+        else {
+            getWorld().removeObject(aGrunt);
+        }
+        
     }    
 }
