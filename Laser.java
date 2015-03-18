@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Laser extends Actor
 {
     public Laser(){
-        getImage().scale(30,30);
+        getImage().scale(3,15);        
     }
     public void act() 
     {
-        setLocation(getX(),getY()-3);
+        setLocation(getX(),getY()-4);
     }    
 }
