@@ -19,10 +19,8 @@ public class Space extends World
         super(800, 600, 1); 
         
         
-        Grunt grunt1 = new grunt1();
-        addObject(grunt1, 200,100);
         
-        
+        addObject(new Grunt(), 200,100);      
         addObject(new Mothership(),300, 100);
         addObject(new Cannon(), 500,500);
     }

@@ -15,8 +15,7 @@ public class Cannon extends Actor
             setLocation(getX()+4,500);
         }
         if(Greenfoot.isKeyDown("space")&& count%10==0){
-            getWorld().addObject(new Laser(),getX(),getY()-12);
-            
+            getWorld().addObject(new Laser(),getX(),getY()-12);            
         }        
     }    
 }
