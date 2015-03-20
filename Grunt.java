@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Grunt extends Actor
 {
     int b=-2;
+    int count = 0;
     public Grunt(){
         getImage().scale(35,35);
     }
@@ -22,6 +23,16 @@ public class Grunt extends Actor
             b=2;
             setLocation(getX()+b,getY()+20);
         }
+        if(count%10==0){
+            setImage("spaceinvaderalien2.png");
+            getImage().scale(35,35);
+        }
+        if(count%12==0){
+            setImage("spaceinvaderalien1.png");
+            getImage().scale(35,35);
+        }
+        
+        
         setLocation(getX()+b,getY());
     }    
 }
