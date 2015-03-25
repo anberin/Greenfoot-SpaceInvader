@@ -26,10 +26,12 @@ public class Grunt extends Actor
         if(count%10==0){
             setImage("spaceinvaderalien2.png");
             getImage().scale(35,35);
+            count++;
         }
-        if(count%12==0){
+        else{
             setImage("spaceinvaderalien1.png");
             getImage().scale(35,35);
+            count++;
         }
         
         
