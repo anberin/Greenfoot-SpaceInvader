@@ -6,38 +6,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Laser extends Actor
+public class enemyLaser extends Actor
 {
-    public Laser(){
+    public enemyLaser(){
         getImage().scale(3,15);        
     }
     public void act() 
     {
         move();
-        if(checkHit()==false && specialCheckHit() == false){
+        if(checkHit()==false){
             checkEdge();
         }                          
     }  
     public void move(){
-        setLocation(getX(),getY()-15);
-    }   
-    public boolean specialCheckHit(){
-        Mothership aMothership = (Mothership)getOneIntersectingObject(Mothership.class );         
-        if ( aMothership != null ){
-            getWorld().removeObject(this);
-            aMothership.hit();
-            return true;
-        }
-        else {
-            return false;
-            
-        } 
+        setLocation(getX(),getY()+1);
     }
     public boolean checkHit(){
-        Grunt aGrunt = (Grunt)getOneIntersectingObject(Grunt.class );         
-        if ( aGrunt != null ){
+        Cannon aCannon = (Cannon)getOneIntersectingObject(Cannon.class );         
+        if ( aCannon != null ){
             getWorld().removeObject(this);
-            aGrunt.hit();
+            aCannon.hit();
             return true;
         }
         else {
@@ -47,9 +35,10 @@ public class Laser extends Actor
         
     }
     public void checkEdge(){
-        if (getY()<10){
+        if (getY()>500){
             getWorld().removeObject(this);         
         }          
+        
     }
     
 }

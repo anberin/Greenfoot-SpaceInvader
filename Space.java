@@ -13,6 +13,13 @@ public class Space extends World
      * Constructor for objects of class Space.
      * 
      */
+    int count=152;
+    int spawn=0;
+    private Score theScore;
+    private GameOver aGameOver;
+    public boolean checkMotherShip = false;
+    private Lives lives;
+    
     public Space()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -24,8 +31,39 @@ public class Space extends World
             }
         }
         
-             
-        addObject(new Mothership(),400, 50);
+        lives = new Lives("Lives: ", 3);
+        addObject(lives, 628, 520);
+        
+        theScore = new Score("Score: ");
+        addObject(theScore, 420,520);   
+        addObject(new Mothership(), 100,50);
+        
         addObject(new Cannon(), 400,500);
     }
+    public void act() {  
+        count++;
+        gameStatus();        
+    }
+    public void gameStatus(){
+        if (numberOfObjects()<=2) 
+        {
+            addObject(new GameOver(),400,300);
+            Greenfoot.playSound("gameover.wav");
+            
+            gameOver();
+        }   
+    }    
+    
+    public static void gameOver() {
+        Greenfoot.delay(500);          
+        Greenfoot.stop();
+        
+    }
+    public void increaseScore(){
+        theScore.add(100);
+    }
+    public void removeLife() {
+        lives.removeOne();
+    }
+    
 }
